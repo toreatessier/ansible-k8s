@@ -1,47 +1,10 @@
-# Ansible Playbooks : Canaima
+# Ansible Playbooks : Kubernetes
 
-Ansible Playbooks for Canaima project.
+# Prérequis
 
-Please find the complete project's documentation [here](https://github.com/canaima-project)
+3 VM CentOS 8.x avec :
 
-## Getting Started
-
-### Presentation
-
-#### install.yml
-
-## Prerequisites
-
-#### Network
-
-
-## Installing Canaima
-#### SSH
-```
-apt-get install ansible git -y
-git clone git@github.com:toreatessier/canaima.git
-cd ansible/ansible-canaima
-ansible-galaxy install -r roles/requirements.yml -p roles
-ansible-playbook install.yml
-```
-
-#### HTTPS
-```
-apt-get install ansible git -y
-git clone https://github.com/toreatessier/canaima.git
-cd ansible/ansible-canaima
-ansible-galaxy install -r roles/requirements.yml -p roles
-ansible-playbook install.yml
-```
-
-### Deploying Canaima's services
-
-## Notes
-
-The playbook runs locally. 
-Modify eventually inventory.ini to set your list.
-Deploy ssh authorized keys for remote execution.
-
-## Authors
-
-* **Toréa TESSIER** - <torea.tessier2@gmail.com> - [Canaima Project](https://github.com/canaima-project/)
+- UUID différents (uuidgen pour avoir un nouveau UUID puis le mettre dans /etc/.../ifcfg-...)
+- Bridge
+- user ansible + visudo pour tout lancer en nopasswd
+- ssh-keygen et ssh-copy-id du master vers les deux nodes
